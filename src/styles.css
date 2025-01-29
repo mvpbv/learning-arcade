@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+body {
+  background-color: #0b1128;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.row {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.scoreboard {
+  strong {
+    color: #ffffff;
+    font-size: 2rem;
+  }
+ .win {
+  background: #00ff00;
+ }
+  .loss {
+    background: #ff0000;
+  }
+}
+
+
+strong {
+  color: #4b9cd3;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #4b9cd3;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 6px rgba(255, 105, 180, 0.5);
+  cursor: pointer;
+}
+.circle:hover {
+  background-color: #ff69b4;
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+
+}
+
+.row:nth-child(odd) .circle:nth-child(even),
+.row:nth-child(even) .circle:nth-child(odd) {
+  background-color: #4b9cd3;
+  box-shadow: 0 0 5px rgba(75, 156, 211, 0.5);
+}
+button:hover {
+
+}
+button .correct {
+  background-color: #00ff00;
+}
+a {
+  text-decoration: none;
+}
+.timer {
+  font-size: 2rem;
+  color: #ff69b4;
+  background-color: #101936;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(16, 25, 54, 0.7);
+  font-weight: 1000;
+
+}

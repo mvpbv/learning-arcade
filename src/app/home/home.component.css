@@ -1,0 +1,39 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.intro {
+  margin-bottom: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #4b9cd3;
+    font-weight: 800;
+    margin: 0;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4b9cd3;
+    margin: 0;
+}
+

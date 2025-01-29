@@ -1,0 +1,52 @@
+<div class="title">
+  <h1>Normal Mode</h1>
+  <br>
+  <br>
+</div>
+<div class="highscore-container">
+  @for (score of scores; track score) {
+    <div class="highscore">
+      <span class="highscore-text">{{score}}</span>
+    </div>
+  }
+</div>
+
+
+<div class="game-container">
+  <div class="game-info">
+    <div class="timer">
+      <span class="timer-char">{{timeFmt | async}}</span>
+    </div>
+    <div class="right-menu">
+      <div class="lives">
+      @for (life of lives; track life) {
+        <span class="life"> {{ life ? '♥' : '♡' }} </span>
+      }
+      </div>
+      <div class="score">
+        <span class="score-text">{{score}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="index">
+    <span class ="index-text">circles[{{correct[0]}}][{{correct[1]}}]</span>
+  </div>
+  <br>
+  <br>
+    <div [ngStyle]="boardStyles">
+      @for (row of matrix; track row; let i = $index) {
+        <div class="row">
+          @for (item of row; track item; let j = $index) {
+            <button class="circle"
+                    (click)="checkCell(i, j)">
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+  <div class="controls">
+    <br>
+  </div>
+</div>
+<h2>{{message}}</h2>
