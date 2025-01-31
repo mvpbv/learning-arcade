@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {interval, map, Subscription, takeWhile, tap, timer} from 'rxjs';
 import {AsyncPipe, NgStyle} from '@angular/common';
 import {GameService} from '../game.service';
+import {StorageService} from '../storage.service';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class NormalComponent implements OnInit {
   level : number = 1;
   levelMap :{ [key: number]: number } = {};
 
-  constructor(private gameService : GameService) {
+  constructor(private gameService : GameService,
+              private storageService: StorageService) {
     this.levelMap = gameService.levelMap;
   }
   setBoardStyles() {
@@ -46,6 +48,7 @@ export class NormalComponent implements OnInit {
 
   ngOnInit() {
     this.matrix = this.gameService.resizeMatrix(this.dimensions, this.correct);
+    this.scores = this.storageService.getScores('normal');
   }
 
   newGame() {
@@ -65,6 +68,7 @@ export class NormalComponent implements OnInit {
     this.gameState = "loss";
     this.gameStarted = false;
     this.scores.push(this.score);
+    this.storageService.saveScores('normal',this.scores);
     this.message = `You're cooked! You scored ${this.score} points!`;
     this.matrix = this.gameService.resizeMatrix(this.dimensions, this.correct);
   }
